@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "changelogDate": "20221204132033",
+  "clientRootFolder": "MobileLegends",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "clans",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "clanName",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength", "minlength", "required"],
+      "fieldValidateRulesMaxlength": "15",
+      "fieldValidateRulesMinlength": "1"
+    },
+    {
+      "fieldName": "capitanId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "MobileLegends",
+  "name": "Clans",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "telegramAccount",
+      "otherEntityRelationshipName": "clans",
+      "relationshipName": "accId",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "turnirs",
+      "otherEntityRelationshipName": "clanIds",
+      "relationshipName": "turnirs",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

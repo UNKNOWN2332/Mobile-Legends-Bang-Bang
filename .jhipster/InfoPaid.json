@@ -1,0 +1,40 @@
+{
+  "applications": "*",
+  "changelogDate": "20221204132037",
+  "clientRootFolder": "MobileLegends",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "info_paid",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "expiryDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "MobileLegends",
+  "name": "InfoPaid",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "telegramAccount",
+      "otherEntityRelationshipName": "infoPaid",
+      "relationshipName": "acc",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "period",
+      "otherEntityRelationshipName": "infoPaid",
+      "relationshipName": "period",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

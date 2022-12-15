@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "jhipster.application.bot.name",
+      "type": "java.lang.String",
+      "description": "Description for jhipster.application.bot.name."
+    }
+  ]
+}

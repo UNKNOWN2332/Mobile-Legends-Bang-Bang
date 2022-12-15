@@ -1,0 +1,74 @@
+{
+  "applications": "*",
+  "changelogDate": "20221204132032",
+  "clientRootFolder": "MobileLegends",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "telegram_account",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "chatId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "username",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "firstname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "role",
+      "fieldType": "Role",
+      "fieldValues": "Capitan,Member,Organizer"
+    },
+    {
+      "fieldName": "createAt",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "MobileLegends",
+  "name": "TelegramAccount",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "pay",
+      "otherEntityRelationshipName": "accId",
+      "relationshipName": "payId",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "clans",
+      "otherEntityRelationshipName": "accId",
+      "relationshipName": "clans",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "infoPaid",
+      "otherEntityRelationshipName": "acc",
+      "relationshipName": "infoPaid",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

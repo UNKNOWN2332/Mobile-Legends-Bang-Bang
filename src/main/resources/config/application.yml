@@ -247,3 +247,6 @@ jhipster:
 # ===================================================================
 
 # application:
+#            bot :
+#              name : GlobalCybersportuz_bot
+#              token : 5620997429:AAF-TEksdxDBK34_kZyA7kqOv7jSmXD6Qpk

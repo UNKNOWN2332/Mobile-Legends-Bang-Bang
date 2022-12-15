@@ -1,0 +1,54 @@
+{
+  "applications": "*",
+  "changelogDate": "20221204132035",
+  "clientRootFolder": "MobileLegends",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "pay",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "Double",
+      "fieldValidateRules": ["min"],
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "isPaid",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "paidAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "expiryDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "MobileLegends",
+  "name": "Pay",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "telegramAccount",
+      "otherEntityRelationshipName": "payId",
+      "relationshipName": "accId",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "period",
+      "otherEntityRelationshipName": "payId",
+      "relationshipName": "periodId",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}
